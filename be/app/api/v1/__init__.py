@@ -1,7 +1,6 @@
 #store endpoint / route of API version 1
-# python package to import easily
-
+from .detect import router as detect_router
 
 routers = [
-    # (ai_flag_disputes, 'disputes', "AI_Flag_Disputes")
+    (detect_router, 'detect', "AI_Detect")
 ]
