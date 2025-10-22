@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (file) {
         const form = new FormData();
         form.append('file', file);
-        res = await fetch('http://127.0.0.1:8000/api/v1/detect/image', {
+        res = await fetch('http://127.0.0.1:8000/api/v1/detect/analyze-image', {
           method: 'POST',
           body: form,
         });
       } else if (text) {
-        res = await fetch('http://127.0.0.1:8000/api/v1/detect/text', {
+        res = await fetch('http://127.0.0.1:8000/api/v1/detect/analyze-text', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ text }),
+          body: JSON.stringify({ input_type: 'text', input_value: text }),
         });
       } else {
         resultEl.textContent = 'Hãy nhập text hoặc chọn ảnh!';
