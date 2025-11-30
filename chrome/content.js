@@ -95,3 +95,25 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   sendResponse({ status: 'done' });
   return true;
 });
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === 'scan_page_result') {
+    const { text, images } = message.data;
+
+    // 1. Đưa text vào ô
+    textInput.value = text || '';
+
+    // 2. GỬI TEXT LÊN API ĐỂ LƯU VÀO SUPABASE NGAY LẬP TỨC!
+    if (text) {
+      sendTextForAnalysis(text); // DÒNG QUAN TRỌNG NHẤT!
+    }
+
+    // 3. Xử lý ảnh như cũ
+    if (images && images.length > 0) {
+      setLoading(`Đang phân tích ${images.length} ảnh...`);
+      batchAnalyzeImages(images);
+    } else {
+      resultEl.innerHTML = '<p>Đã lưu văn bản, không tìm thấy ảnh.</p>';
+    }
+  }
+});

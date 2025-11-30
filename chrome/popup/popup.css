@@ -5,9 +5,8 @@
 }
 body {
   width: 420px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f5f5f5;
-  color: #333;
+  font-family: system-ui;
+  background: #f9f9f9;
 }
 .container {
   padding: 16px;
@@ -18,9 +17,8 @@ body {
 }
 h2 {
   text-align: center;
-  margin-bottom: 12px;
   color: #d32f2f;
-  font-size: 18px;
+  margin-bottom: 12px;
 }
 textarea {
   width: 100%;
@@ -29,23 +27,20 @@ textarea {
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 10px;
-  font-size: 14px;
   resize: vertical;
 }
 .upload {
-  margin: 10px 0;
   text-align: center;
+  margin: 10px 0;
 }
 .upload input {
   display: none;
 }
 .upload label {
-  display: inline-block;
-  padding: 8px 16px;
+  padding: 10px 20px;
   background: #eee;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
 }
 button {
   width: 100%;
@@ -54,24 +49,21 @@ button {
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  margin: 10px 0;
 }
 button:hover {
   background: #b71c1c;
 }
-
 .result {
   margin-top: 16px;
-  max-height: 500px;
+  max-height: 600px;
   overflow-y: auto;
   padding: 10px;
   background: #fafafa;
   border-radius: 8px;
   border: 1px solid #eee;
-  font-size: 13px;
-  line-height: 1.5;
 }
 .image-item {
   margin: 12px 0;
@@ -82,22 +74,19 @@ button:hover {
 }
 .image-item img {
   max-width: 100%;
-  height: auto;
   border-radius: 6px;
   margin-bottom: 8px;
 }
 .result-item {
   padding: 10px;
-  background: #fff3e0;
-  border-left: 4px solid #ff9800;
-  margin: 8px 0;
-  border-radius: 0 6px 6px 0;
+  border-radius: 6px;
+  font-size: 14px;
 }
 .toxic {
   background: #ffebee;
-  border-left-color: #f44336;
+  border-left: 4px solid #f44336;
 }
 .safe {
   background: #e8f5e8;
-  border-left-color: #4caf50;
+  border-left: 4px solid #4caf50;
 }
