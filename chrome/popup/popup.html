@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <title>AI Toxic Detector</title>
     <link rel="stylesheet" href="popup.css" />
-    <title>AI Detector</title>
   </head>
   <body>
-    <h2>AI Toxic Detector</h2>
+    <div class="container">
+      <h2>AI Toxic Detector</h2>
 
-    <textarea id="textInput" placeholder="Paste text here..."></textarea>
-    <input type="file" id="imageInput" accept="image/*" />
-    <button id="analyzeBtn">Phân tích ngay</button>
+      <textarea
+        id="textInput"
+        placeholder="Nội dung văn bản sẽ tự động điền khi mở..."
+      ></textarea>
 
-    <div id="result"></div>
+      <div class="upload">
+        <input type="file" id="imageInput" accept="image/*" />
+        <label for="imageInput">Image from machine</label>
+      </div>
+
+      <button id="analyzeBtn">Analyze now</button>
+
+      <div id="result" class="result"></div>
+    </div>
 
     <script src="popup.js"></script>
   </body>

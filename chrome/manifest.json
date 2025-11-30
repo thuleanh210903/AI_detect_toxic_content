@@ -7,14 +7,16 @@
     "128": "assets/logo.png"
   },
   "permissions": ["activeTab", "storage", "scripting", "contextMenus"],
-  "host_permissions": ["http://127.0.0.1:8000/*"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "*://*/*"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
     }
   ],
   "action": {
